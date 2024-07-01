@@ -16,7 +16,7 @@
         @foreach ($posts as $post)
             <div class="box">
                 <p><a href="{{ route('posts.show', $post) }}">{{ $post->content }}</a></p>
-                <a href="{{ route('posts.edit', $post }}" class="button is-warning">Edit</a>
+                <a href="{{ route('posts.edit', $post) }}" class="button is-warning">Edit</a>
                 <form method="POST" action="{{ route('posts.destroy', $post) }}" style="display: inline;">
                     @csrf
                     @method('DELETE')
