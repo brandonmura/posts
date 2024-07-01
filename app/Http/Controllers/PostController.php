@@ -36,34 +36,34 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $note)
+    public function show(Post $post)
     {
-        return view('posts.show', compact('note'));
+        return view('posts.show', compact('post'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $note)
+    public function edit(Post $post)
     {
-        return view('posts.edit', compact('note'));
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $note)
+    public function update(Request $request, Post $post)
     {
-        $note->update($request->all());
+        $post->update($request->all());
         return redirect()->route('posts.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $note)
+    public function destroy(Post $post)
     {
-        $note->delete();
+        $post->delete();
         return redirect()->route('posts.index');
     }
 }
